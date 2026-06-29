@@ -159,6 +159,7 @@ NLP解析(股票·方向·价格·动作) → 创建任务 → 后台30秒监控
 **AI助手升级** — 从看门狗→全功能对话助手，NLP意图路由+10类意图+消息气泡UI
 
 **BRStock参考优化** — GitHub蓝调色板 + 玻璃态顶栏 + 策略回测（5种策略+资金曲线）
+> 📎 策略回测模块参考自 [@tuxinyu (LinkedIn)](https://www.linkedin.com/in/tuxinyu/zh-cn) 的作品 [BRStock](https://brstock.blackrice.top/ui/index.html)
 
 **AI交易分析学习** — 6维度行为洞见 + 散户6大错误 + 机构4类手法
 
