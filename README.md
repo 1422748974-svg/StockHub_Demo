@@ -207,4 +207,4 @@ python -m http.server 8080
 >
 > 产品设计提案 | 2026.06 | 自包含HTML Demo  
 > 🤖 全流程由 **WorkBuddy** AI 辅助开发  
-> ✍️ 作者：张策
+> ✍️ 作者：HZ
