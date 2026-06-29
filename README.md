@@ -206,4 +206,5 @@ python -m http.server 8080
 > **StockHub · 让散户用机构的方式管理投资** 🏦
 >
 > 产品设计提案 | 2026.06 | 自包含HTML Demo  
-> 🤖 全流程由 **WorkBuddy** AI 辅助开发
+> 🤖 全流程由 **WorkBuddy** AI 辅助开发  
+> ✍️ 作者：张策
