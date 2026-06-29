@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>StockHub · 多券商智能集中管理站</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;
+  font-size:15px;color:#e0e0e0;background:#0d1117;
+  line-height:1.5;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+
+/* Bg gradient */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;
+  background:radial-gradient(ellipse 80% 60% at 50% -20%,rgba(58,123,213,0.08),transparent),
+             radial-gradient(ellipse 60% 50% at 80% 80%,rgba(63,185,80,0.04),transparent);
+  pointer-events:none;
+}
+
+/* Page */
+.page{
+  position:relative;z-index:1;
+  max-width:960px;margin:0 auto;padding:60px 32px 40px;
+  display:flex;flex-direction:column;align-items:center;min-height:100vh;
+}
+
+/* Header */
+.header{text-align:center;margin-bottom:56px}
+.logo-icon{font-size:48px;margin-bottom:16px}
+.logo-text{font-size:42px;font-weight:800;color:#f0f0f0;letter-spacing:-1px;margin-bottom:8px}
+.logo-text span{color:#3a7bd5}
+.tagline{font-size:17px;color:#8b949e;margin-bottom:24px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.pill{
+  font-size:12px;padding:5px 14px;border-radius:14px;
+  background:rgba(58,123,213,0.1);color:#58a6ff;
+  border:1px solid rgba(58,123,213,0.2);
+}
+
+/* Cards Grid */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;width:100%;margin-bottom:48px}
+
+.card{
+  background:#161b22;border:1px solid #21262d;border-radius:16px;
+  padding:32px 24px 28px;text-align:center;
+  transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  opacity:0;transition:opacity .3s;
+}
+.card:nth-child(1)::before{background:linear-gradient(90deg,#3a7bd5,#58a6ff)}
+.card:nth-child(2)::before{background:linear-gradient(90deg,#3fb950,#56d364)}
+.card:nth-child(3)::before{background:linear-gradient(90deg,#bc8cff,#d2a8ff)}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:#30363d;box-shadow:0 8px 30px rgba(0,0,0,.3);
+}
+.card:hover::before{opacity:1}
+.card-icon{font-size:42px;margin-bottom:20px;display:block}
+.card-label{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;
+  margin-bottom:8px;
+}
+.card:nth-child(1) .card-label{color:#58a6ff}
+.card:nth-child(2) .card-label{color:#3fb950}
+.card:nth-child(3) .card-label{color:#bc8cff}
+.card-title{font-size:20px;font-weight:700;color:#f0f0f0;margin-bottom:10px}
+.card-desc{font-size:14px;color:#8b949e;line-height:1.6;margin-bottom:20px;max-width:260px}
+.card-badge{
+  font-size:12px;padding:4px 12px;border-radius:10px;font-weight:500;
+}
+.card:nth-child(1) .card-badge{background:rgba(58,123,213,0.15);color:#58a6ff}
+.card:nth-child(2) .card-badge{background:rgba(63,185,80,0.15);color:#3fb950}
+.card:nth-child(3) .card-badge{background:rgba(188,140,255,0.15);color:#bc8cff}
+
+/* Footer */
+.footer{text-align:center;font-size:13px;color:#484f58;padding-top:32px;border-top:1px solid #21262d;width:100%}
+
+/* Responsive */
+@media(max-width:768px){
+  .page{padding:40px 20px 32px}
+  .cards{grid-template-columns:1fr;gap:16px;max-width:360px}
+  .header{margin-bottom:36px}
+  .logo-text{font-size:32px}
+  .card{padding:24px 20px}
+}
+
+/* fade in */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.header,.cards{animation:fadeUp .6s ease both}
+.cards{animation-delay:.15s}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="logo-icon">🏦</div>
+    <div class="logo-text">Stock<span>Hub</span></div>
+    <div class="tagline">多券商智能集中管理站 — 绑定券商 · AI分析 · 智能盯盘 · 对话式交易</div>
+    <div class="pills">
+      <span class="pill">21家券商绑定</span>
+      <span class="pill">AI对话助手</span>
+      <span class="pill">五因子分析</span>
+      <span class="pill">智能看门狗</span>
+      <span class="pill">策略回测</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <a class="card" href="stockhub-demo.html">
+      <span class="card-icon">🖥️</span>
+      <span class="card-label">Desktop Demo</span>
+      <span class="card-title">Web 桌面版</span>
+      <span class="card-desc">全功能面板 · 10大模块 · 行情中心 · 持仓分析 · 技术分析 · AI助手 · 策略回测</span>
+      <span class="card-badge">打开桌面版 →</span>
+    </a>
+
+    <a class="card" href="stock-demo-app.html">
+      <span class="card-icon">📱</span>
+      <span class="card-label">Mobile Demo</span>
+      <span class="card-title">App 移动版</span>
+      <span class="card-desc">5Tab底部导航 · AI助手面板 · 持仓+AI选股 · 移动优先设计 · 触屏交互</span>
+      <span class="card-badge">打开移动版 →</span>
+    </a>
+
+    <a class="card" href="slides.html">
+      <span class="card-icon">📋</span>
+      <span class="card-label">Design Deck</span>
+      <span class="card-title">设计提案</span>
+      <span class="card-desc">12页幻灯片 · 产品定位 · 功能架构 · 竞品分析 · 路线图 · 场景全路径</span>
+      <span class="card-badge">浏览幻灯片 →</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    StockHub · 让散户用机构的方式管理投资&nbsp;&nbsp;|&nbsp;&nbsp;2026.06 · 产品设计提案
+  </div>
+</div>
+</body>
+</html>
