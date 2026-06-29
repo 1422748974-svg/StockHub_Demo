@@ -196,6 +196,7 @@ git clone https://github.com/1422748974-svg/StockHub_Demo.git
 cd StockHub_Demo
 
 # 浏览器打开
+https://7005634c1c1b4db6ade8ac5ac5b91721.app.codebuddy.work
 open index.html
 # 或启动本地服务器
 python -m http.server 8080
